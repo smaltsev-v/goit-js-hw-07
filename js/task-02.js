@@ -7,9 +7,12 @@ const ingredients = [
   'Приправы',
 ];
 
-const titleElList = document.querySelector('#ingredients');
-
-const titleElitem = ingredients.reduce((str, item) => str + `<li>${item}</li>`, '');
-
-titleElList.innerHTML = titleElitem;
+const ingredientsList = document.querySelector('#ingredients');
+const elements = ingredients.map(ingredient => {
+  const itemEl = document.createElement("li");
+  itemEl.textContent = ingredient;
+  return itemEl;
+ })
+console.log(elements);
+ingredientsList.append(...elements);
 
